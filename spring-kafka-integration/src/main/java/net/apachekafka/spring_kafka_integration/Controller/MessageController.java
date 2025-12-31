@@ -1,7 +1,6 @@
 package net.apachekafka.spring_kafka_integration.Controller;
 
-import net.apachekafka.spring_kafka_integration.Kafka.kafkaProducer;
-import org.apache.kafka.clients.producer.KafkaProducer;
+import net.apachekafka.spring_kafka_integration.Kafka.KafkaProducer;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,9 +10,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/api/kafka/message")
 public class MessageController {
-    private kafkaProducer kafkaProducer;
+    private KafkaProducer kafkaProducer;
 
-    public MessageController(kafkaProducer kafkaProducer) {
+    public MessageController(KafkaProducer kafkaProducer) {
         this.kafkaProducer = kafkaProducer;
     }
     // http:localhost:8080/api/kafka/message/publish?message=helloworld
